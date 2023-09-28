@@ -9,7 +9,7 @@ MY LIMIT ON TRAINING:
 
 PROBLEMS WITH MODELS TODAY:
 - The open source models are weak. Using LARGER DATASETS perhaps multi-modal, would help to do better here.
-- 
+- ..
 
 Fast Feed Forward Networks:
 - Allow for faster inference (said differently, higher throughput). So you can serve a lot more people from the same GPU => CHEAPER INFERENCE.
@@ -31,3 +31,5 @@ IDEA - deep LoRA
     - Load TinyLlama.
     - Create a binary tree routing network of depth d.
     - Create a set of LoRA adapters on RAM.
+
+A key issue is that there isn't a way to do good parallel inference when applying LoRA adapters because all batches may not be suitable... Still, it's not about speed it's really about getting more data into the model, and doing so in a way that's more efficient than just increasing the model size... It does seem, empirically that LoRA is more efficient at gathering data than a base model, unclear why.
